@@ -16,11 +16,11 @@ class CodeableConcept:
 	text: str = None
 @dataclass
 class Address:
-    use: str
+    use: str 
     text: str
     line:str
     city: str
-    district: str
+    district: str 
     state: str
     postalcode: str
     country: str
@@ -32,15 +32,15 @@ class HumanName:
     family: str = None
     given: str = None
     prefix: str = None
-    suffix: str = None
+    suffix: str = None 
 
 
 @dataclass
 class Identifier:
     use: Optional[str] = None
-    system: Optional[str] = None
+    system: Optional[str] = None  
     value: Optional[str] = None
-    period = Period
+    period = Period 
     assigner: Optional[str] = None
 
 @dataclass
@@ -56,16 +56,16 @@ class Contact:
 @dataclass
 class Communication:
     language: str
-    preferred: bool
+    preferred: bool    
 
 @dataclass
-class link:
+class link: 
         other: str = None
 
 
 class clinicalStatus(BaseModel):
     #active | recurrence | relapes | inactive | remission | resolved
-    clinical_status: str
+    clinical_status: str 
 
 class verificationStatus(BaseModel):
     # Unconfirmed | provisional | differential | confirmed | refuted | entered-in-error
@@ -93,7 +93,7 @@ class Encounter(BaseModel):
 class OnsetDateTime(BaseModel):
     onsetDateTime: datetime = None
 
-class OnsetAge(BaseModel):
+class OnsetAge(BaseModel): 
     onsetage: datetime = None
 
 class OnsetPeriod(BaseModel):
@@ -113,7 +113,7 @@ class Patient(BaseModel):
     birthDate: datetime = None
     telecom: int
     name: HumanName
-    gender: str
+    gender: str 
     deceasedBoolean: bool
     deceasedDateTime: datetime = None
     address: Address
